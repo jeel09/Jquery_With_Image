@@ -1,0 +1,92 @@
+﻿@model List<State>
+
+
+<div class="card shadow border-0 mt-3  pb-3">
+    <div class="card-header bg-secondary bg-gradient m-lg-1 py-3 ">
+        <div class="row">
+            <div class="col-12 text-center">
+                <h2 class="text-white py-2"> State List</h2>
+            </div>
+        </div>
+    </div>
+    <div class=" card-body   p-5">
+
+
+        <div class=" row">
+            <div class=" col-12 text-end pb-3">
+
+
+                <button class=" btn btn-dark" id="btnAdd">
+                    <i class="bi bi-patch-plus"></i> Create New State
+                </button>
+
+            </div>
+        </div>
+        <div class=" container-fluid">
+            <table id="tblDB" class=" table table-hover table-bordered px-5 " style="width:100%">
+                <thead>
+
+                    <tr>
+                        <th>
+                            State Id
+                        </th>
+                        <th>
+                            State Name
+                        </th>
+                        <th>
+                            Country Name
+                        </th>
+                        <th> </th>
+                    </tr>
+                </thead>
+                <tbody id="tblData"></tbody>
+            </table>
+
+
+            <div class=" modal fade modal" id="userModal">
+                <div class=" modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h2 class="text-info modal-title" id="addState">State</h2>
+                            <button class="btn-close" data-bs-dismiss="modal"></button>
+                        </div>
+                        <div class="modal-body">
+                            <form method="post" id="countryForm">
+                                <div class="form-group" id="cId">
+                                    <label>Id</label>
+                                    <input type="text" class="form-control" id="StateId" disabled="disabled" />
+                                </div>
+                                <div class="form-group mt-2">
+                                    <label>State Name</label>
+                                    <input type="text" class="form-control" id="StateName" />
+                                </div>
+                                <div class="form-group pb-3">
+                                    <div class="form-group pb-3">
+                                        <label>Select Country</label>
+                                        <select class="form-control" id="country" ></select>
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
+                        <div class="modal-footer">
+
+                            <button class="btn btn-primary" onclick="AddState();" id="AddData">Create</button>
+                            <button class="btn btn-warning" onclick="UpdateState();" style="display:none" id="UpdateData">Update</button>
+
+                            <button class="btn btn-danger btn-default" data-bs-dismiss="modal">Close</button>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+@section Scripts
+{
+    <script src="~/js/state.js"></script>
+}
